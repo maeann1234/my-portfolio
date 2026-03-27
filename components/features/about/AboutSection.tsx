@@ -1,14 +1,11 @@
-// components/features/about/AboutHero.tsx
 import Image from "next/image";
 
 export function AboutSection() {
   return (
-    <section className="pt-24 pb-16 bg-[#faf9f6]">
+    <section className="pt-24 pb-16 bg-[#faf9f6] dark:bg-zinc-950 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col md:flex-row items-start gap-12 lg:gap-20">
         
-        {/* LEFT SIDE: Image Content */}
-        {/* 'shrink-0' keeps the container from collapsing. 'items-start' forces top alignment. */}
-        <div className="relative w-full max-w-sm shrink-0 items-start mt-2"> {/* Slight margin to match text visual baseline */}
+        <div className="relative w-full max-w-sm shrink-0 items-start mt-2">
           <div className="aspect-square relative rounded-3xl overflow-hidden shadow-2xl">
             <Image 
               src="/profile.jpg" 
@@ -20,17 +17,13 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* RIGHT SIDE: Text Content */}
-        {/* The space-y-8 handles the large gap between Header and Bio paragraph */}
         <div className="flex-grow space-y-8">
           
-          {/* Main Heading - Using font-bold, tracking-tight as requested previously */}
-          <h2 className="text-[5.5rem] lg:text-[6.5rem] font-bold leading-[1.05] tracking-tight text-zinc-950">
+          <h2 className="text-[5.5rem] lg:text-[6.5rem] font-bold leading-[1.05] tracking-tight text-zinc-950 dark:text-zinc-50 transition-colors">
             Behind the<br />code.
           </h2>
           
-          {/* Bio Text - Standard paragraph styles from your mockup */}
-          <div className="space-y-6 text-xl text-zinc-700 leading-relaxed max-w-3xl">
+          <div className="space-y-6 text-xl text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-3xl transition-colors">
             <p>
               I am a Full Stack Developer who bridges the gap between complex backend architectures and intuitive, human-centered design. 
             </p>

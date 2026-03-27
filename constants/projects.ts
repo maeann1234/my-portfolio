@@ -5,7 +5,7 @@ export type Project = {
   category: "Full Stack" | "UI/UX" | "Backend";
   techStack: string[];
   imageUrl: string;
-  link: string; 
+  link: string;
 };
 
 export const PROJECTS_DATA: Project[] = [
@@ -16,7 +16,7 @@ export const PROJECTS_DATA: Project[] = [
     category: "Full Stack",
     techStack: ["Next.js", "Tailwind CSS", "TypeScript", "PostgreSQL"],
     imageUrl: "/placeholder-project.jpg",
-    link: "https://github.com", 
+    link: "https://github.com",
   },
   {
     id: "02",

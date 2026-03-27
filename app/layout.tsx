@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; 
+import { Inter } from "next/font/google";
 import "styles/globals.css";
-
 import { Navbar } from "@/components/common/Navbar";
 import { Footer } from "@/components/common/Footer";
+import { ThemeProvider } from "@/components/theme-provider";
 
-// Initialize your preferred font
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Mae Ann | Portfolio",
-  description: "Full Stack Developer with a Master's in Web Architecture.",
+  description: "A collection of web platforms, backend architectures, and human-centered design research.",
 };
 
 export default function RootLayout({
@@ -20,19 +19,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} flex flex-col min-h-screen bg-[#faf9f6] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 antialiased`}>
+      <body className={inter.className}>
         
-        {/* Global Header */}
-        <Navbar />
-        
-        {/* Main page content goes here and flex-grow ensures the footer is pushed down */}
-        <div className="flex-grow">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
           {children}
-        </div>
+          <Footer />
+        </ThemeProvider>  
 
-        {/* Global Footer */}
-        <Footer />
-        
       </body>
     </html>
   );
