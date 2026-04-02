@@ -28,7 +28,7 @@ export function AboutSection() {
               I am a Full Stack Developer who bridges the gap between complex backend architectures and intuitive, human-centered design. 
             </p>
             <p>
-              Whether I'm mapping out user journeys, troubleshooting enterprise systems, or building responsive web applications, my goal is always the same: creating digital experiences that are robust under the hood and beautiful on the screen.
+              Whether I&apos;m mapping out user journeys, troubleshooting enterprise systems, or building responsive web applications, my goal is always the same: creating digital experiences that are robust under the hood and beautiful on the screen.
             </p>
             <p>
               Beyond the code, I communicate fluently across technical and creative domains, bringing ideas to life in English, Tagalog, and Bisaya.

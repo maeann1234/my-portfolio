@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Search } from "lucide-react";
-import { BLOG_POSTS, type BlogPost } from "@/constants/blog";
+import { BLOG_POSTS } from "@/constants/blog";
 
 export function BlogList() {
   const [searchQuery, setSearchQuery] = useState("");

@@ -22,11 +22,11 @@ export function HeroSection() {
         <div className="flex flex-col space-y-8 order-1 lg:order-2">
           
           <h1 className="text-6xl lg:text-[7.5rem] font-bold leading-[1.05] tracking-tight text-zinc-900 dark:text-zinc-50">
-            Hello, I'm<br />Mae Ann.
+            Hello, I&apos;m<br />Mae Ann.
           </h1>
           
           <p className="text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 max-w-[500px] leading-relaxed">
-            I am a Full Stack Developer with a Master's in Web Architecture.
+            I am a Full Stack Developer with a Master&apos;s in Web Architecture.
           </p>
           
           <div className="flex items-center space-x-8 pt-4">

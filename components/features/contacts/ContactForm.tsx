@@ -38,7 +38,7 @@ export function ContactForm() {
           
           <div className="flex flex-col space-y-8">
             <h1 className="text-[5.5rem] md:text-[6.5rem] font-bold tracking-tight text-zinc-950 dark:text-zinc-50 leading-[0.9] transition-colors">
-              Let's build<br />something.
+              Let&apos;s build<br />something.
             </h1>
             
             <p className="text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-md transition-colors">
@@ -83,7 +83,7 @@ export function ContactForm() {
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
                 <h3 className="text-3xl font-bold text-zinc-950 dark:text-zinc-50">Message Sent!</h3>
-                <p className="text-lg text-zinc-600 dark:text-zinc-400">Thanks for reaching out. I'll get back to you as soon as possible.</p>
+                <p className="text-lg text-zinc-600 dark:text-zinc-400">Thanks for reaching out. I&apos;ll get back to you as soon as possible.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col space-y-6">

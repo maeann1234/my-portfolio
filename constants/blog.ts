@@ -24,7 +24,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "March 15, 2026",
     readTime: "5 min read",
     category: "UI/UX",
-    imageUrl: "/placeholder-blog.jpg",
+    imageUrl: "https://plus.unsplash.com/premium_photo-1720903984909-04be5b4cda06?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "02",
@@ -39,7 +39,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "February 28, 2026",
     readTime: "8 min read",
     category: "Full Stack",
-    imageUrl: "/placeholder-blog.jpg",
+    imageUrl: "https://plus.unsplash.com/premium_photo-1681487942927-e1a2786e6036?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "03",
@@ -54,6 +54,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "January 10, 2026",
     readTime: "6 min read",
     category: "Backend",
-    imageUrl: "/placeholder-blog.jpg",
+    imageUrl: "https://plus.unsplash.com/premium_photo-1720287601920-ee8c503af775?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   }
 ];

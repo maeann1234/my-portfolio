@@ -14,7 +14,7 @@ export function HomeCTA() {
             </h2>
 
             <p className="text-xl md:text-2xl text-zinc-200 dark:text-zinc-300 leading-relaxed transition-colors">
-              Whether you're searching for a dedicated partner to develop your project or simply need expert support, I'm here to help.
+              Whether you&apos;re searching for a dedicated partner to develop your project or simply need expert support, I&apos;m here to help.
             </p>
 
             <Link

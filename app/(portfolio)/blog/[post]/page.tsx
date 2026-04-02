@@ -2,14 +2,16 @@ import { notFound } from "next/navigation";
 import { BLOG_POSTS } from "@/constants/blog";
 import { BlogPostArticle } from "@/components/features/blog/BlogPostArticle";
 
-export function generateMetadata({ params }: { params: { post: string } }) {
-  const post = BLOG_POSTS.find((p) => p.slug === params.post);
+export async function generateMetadata({ params }: { params: Promise<{ post: string }> }) {
+  const resolvedParams = await params;
+  const post = BLOG_POSTS.find((p) => p.slug === resolvedParams.post);
   if (!post) return { title: "Post Not Found" };
   return { title: `${post.title} | Mae Ann` };
 }
 
-export default function SinglePostPage({ params }: { params: { post: string } }) {
-  const post = BLOG_POSTS.find((p) => p.slug === params.post);
+export default async function SinglePostPage({ params }: { params: Promise<{ post: string }> }) {
+  const resolvedParams = await params;
+  const post = BLOG_POSTS.find((p) => p.slug === resolvedParams.post);
 
   if (!post) {
     notFound(); 

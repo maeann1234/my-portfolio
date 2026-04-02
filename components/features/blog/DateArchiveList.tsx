@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { MoveLeft, ArrowUpDown } from "lucide-react";
 import { type BlogPost } from "@/constants/blog";
 
@@ -16,18 +17,20 @@ export function DateArchiveList({ dateParams, initialPosts }: DateArchiveListPro
   const isRoot = !dateParams || dateParams.length === 0;
   const year = dateParams?.[0];
   const month = dateParams?.[1];
+  const day = dateParams?.[2];
 
   let displayTitle = "Complete Archive";
-  if (year && month) displayTitle = `Archive: ${month}/${year}`;
+  if (year && month && day) displayTitle = `Archive: ${month}/${day}/${year}`;
+  else if (year && month) displayTitle = `Archive: ${month}/${year}`;
   else if (year) displayTitle = `Archive: ${year}`;
 
-  const sortedPosts = [...initialPosts].sort((a, b) => {
+  const sortedPosts = [...initialPosts].sort(() => {
     return sortDescending ? -1 : 1;
   });
 
   return (
     <section className="py-24 bg-[#faf9f6] dark:bg-zinc-950 transition-colors duration-300 min-h-screen">
-      <div className="max-w-4xl mx-auto px-6 md:px-12 w-full">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
         
         <Link href="/blog" className="inline-flex items-center gap-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50 font-bold mb-12 transition-colors">
           <MoveLeft className="w-5 h-5" /> Back to Blog
@@ -54,18 +57,41 @@ export function DateArchiveList({ dateParams, initialPosts }: DateArchiveListPro
           </button>
         </div>
 
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sortedPosts.map((post) => (
-            <Link key={post.id} href={`/blog/${post.slug}`} className="flex flex-col md:flex-row md:items-center justify-between p-8 rounded-[2rem] border-2 border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-zinc-900 dark:hover:border-zinc-50 transition-all duration-300 shadow-sm hover:shadow-md group">
-              <div className="flex-1">
-                <h2 className="text-2xl font-bold text-zinc-950 dark:text-zinc-50 mb-2 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
-                  {post.title}
-                </h2>
-                <div className="flex items-center gap-4 text-sm font-bold text-zinc-500 dark:text-zinc-400">
-                  <span>{post.date}</span>
-                  <span>•</span>
-                  <span>{post.category}</span>
+            <Link 
+              key={post.id} 
+              href={`/blog/${post.slug}`}
+              className="group flex flex-col bg-white dark:bg-zinc-900 rounded-[2.5rem] border-2 border-zinc-200 dark:border-zinc-800 hover:border-zinc-900 dark:hover:border-zinc-50 transition-all duration-300 shadow-sm hover:shadow-md overflow-hidden"
+            >
+              
+              <div className="relative w-full aspect-[4/3] bg-zinc-100 dark:bg-zinc-800 border-b-2 border-zinc-200 dark:border-zinc-800 overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center text-zinc-400 dark:text-zinc-600 font-semibold text-lg z-0">
+                  Image Placeholder
                 </div>
+                <Image 
+                  src={post.imageUrl} 
+                  alt={post.title} 
+                  fill 
+                  className="object-cover transition-transform duration-700 group-hover:scale-105 relative z-10" 
+                  onError={(e) => (e.currentTarget.style.opacity = "0")} 
+                />
+              </div>
+
+              <div className="flex flex-col flex-grow p-8 lg:p-10 space-y-5">
+                <div className="flex items-center gap-3 text-sm font-bold text-zinc-500 dark:text-zinc-400 transition-colors">
+                  <span>{post.date}</span>
+                  <span className="text-zinc-300 dark:text-zinc-700">•</span>
+                  <span className="text-zinc-900 dark:text-zinc-50 transition-colors">{post.category}</span>
+                </div>
+
+                <h3 className="text-2xl lg:text-3xl font-extrabold text-zinc-950 dark:text-zinc-50 leading-tight group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
+                  {post.title}
+                </h3>
+
+                <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-3">
+                  {post.excerpt}
+                </p>
               </div>
             </Link>
           ))}
