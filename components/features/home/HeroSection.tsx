@@ -36,9 +36,13 @@ export function HeroSection() {
             >
               Check out my work →
             </Link>
-            <Button className="bg-zinc-800 text-zinc-50 hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 text-base font-semibold px-8 py-7 rounded-xl">
-              Download Resume
+            
+            <Button asChild className="bg-zinc-800 text-zinc-50 hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 text-base font-semibold px-8 py-7 rounded-xl">
+              <a href="/mae-ann-resume.pdf" download="mae-ann-resume.pdf">
+                Download Resume
+              </a>
             </Button>
+            
           </div>
           
         </div>
